@@ -6,6 +6,7 @@
 		<script src="../script.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 		<link href="../style.css" rel="stylesheet">
+		<link href="../PopShopCss.css" rel="stylesheet>
 		<!--TODO: -->
 		
 	</head>
@@ -24,7 +25,39 @@
 		</div>
 		<div id="main-page">
 			
-			
+			<!--Shop snapshot -->
+			<div class="shop-container-clothes" id="clothes-shop">
+				<div class="shop-item">
+					<div class="img-holder"></div>
+					<div class="info-item-holder">
+						<div class="item-name" id="cloth-1-item-name">Item Name</div>
+						<div class="sizes">Sizes: </div>
+						<div class="clothing-sizes-collection">
+							<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-1').innerHTML = 'XS'; document.getElementById('size-cloth-1').value = 'XS';">XS</div>
+							<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-1').innerHTML = 'S'; document.getElementById('size-cloth-1').value = 'S';">S</div>
+							<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-1').innerHTML = 'M'; document.getElementById('size-cloth-1').value = 'M';">M</div>
+							<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-1').innerHTML = 'L'; document.getElementById('size-cloth-1').value = 'L';">L</div>
+							<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-1').innerHTML = 'XL'; document.getElementById('size-cloth-1').value = 'XL';">XL</div>
+						</div>
+						<div class="color-clothing">Colors: </div>
+						<div class="clothing-colors-collection">
+							<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-1').innerHTML = 'White'; document.getElementById('color-cloth-1').value = 'White';">White</div>
+							<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-1').innerHTML = 'Black'; document.getElementById('color-cloth-1').value = 'Black';">Black</div>
+							<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-1').innerHTML = 'Red'; document.getElementById('color-cloth-1').value = 'Red';">Red</div>
+							<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-1').innerHTML = 'Blue'; document.getElementById('color-cloth-1').value = 'Blue';">Blue</div>
+							<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-1').innerHTML = 'Orange'; document.getElementById('color-cloth-1').value = 'Orange';">Orange</div>
+						</div>
+						<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-1-quantity" type="number" min="0" max="999"/></div>
+						<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-1"></span></div>
+						<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-1"></span></div>
+						<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-1"></span></div>
+						<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+						<div class="calculate-button-clothes" onclick="calculateCloth1Price()" style="transform: translateY(-120px);">Calculate</div>
+						<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-1-price"></span></div>
+						<div class="purchase-item" id="cloth-1-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+					</div>
+				</div>
+			</div>
 			<!--TODO: snapshot of shop : STEAL DEREK's CODE-->
 			<!--TODO: snapshot of Tour dates, locations, time
 					: timeline of events, have calendar icon thing with the dates-->
