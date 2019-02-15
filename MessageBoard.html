@@ -3,9 +3,9 @@
 	<head>
 		<title>Pop Goes the Weasel Message Board</title>
 		<meta charset='UTF-8'>
-		<script src="../script.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 		<link href="../style.css" rel="stylesheet">
+		<link href="../MessageBoardCss.css" rel="stylesheet">
 	</head>
 	
 	<body>
@@ -20,9 +20,39 @@
 			</ul>
 			<img src='../Images/logo.png' id="title" alt='Pop goes the weasel'>
 		</div>
+		<br>
 		<h1>Fan message board</h1>
+		
+		<div id="main-page">
+			<!-- Message board page -->
+			<div id="message-page">
+				<button onclick="addMessage()">Add a post</button>
+				
+				<div id="message-board">
+					
+					<!-- TODO: display message board with  -->
+					<!-- possibly cutesy image div -->
+					<div></div>
+					
+					<!-- message div -->
+					<div></div>
+				</div>
+			</div>
+			
+			<!-- add comment page -->
+			<div id="add-message">
+				<button onclick="viewBoard()">Back to board</button>
+				<!-- Collect all of the juicy info -->
+				<form>
+					<input type="text" id="name">
+					<input type="text" id="comment">				
+				</form>
+				<button onclick="submit()">Add comment</button>
+			</div>
+		</div>
+		
 		<div id="footer">
-			<p>
+			<p id="copyright">
 				&copy Derek, Tristian and Megan
 				
 				Pop Goes The Weasel.&reg
@@ -37,5 +67,6 @@
 			<!--TODO: Copyright
 					: -->
 		</div>
+		<script src="../MessageBoardScript.js"></script>
 	</body>
 </html>
