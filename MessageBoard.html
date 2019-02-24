@@ -17,37 +17,31 @@
 				<li><a href="News.html">News</a></li>
 				<li><a href="Bio.html">Bio</a></li>
 				<li><a href="MessageBoard.html">Message Board</a></li>
+				<li><a href="About.html">About</a></li>
 			</ul>
 			<img src='../Images/logo.png' id="title" alt='Pop goes the weasel'>
 		</div>
 		<br>
-		<h1>Fan message board</h1>
+		<h1>Fan Messages</h1>
 		
 		<div id="main-page">
 			<!-- Message board page -->
 			<div id="message-page">
-				<button onclick="addMessage()">Add a post</button>
 				
-				<div id="message-board">
-					
-					<!-- TODO: display message board with  -->
-					<!-- possibly cutesy image div -->
-					<div></div>
-					
-					<!-- message div -->
-					<div></div>
-				</div>
+				<button id="btn">Add a post</button>
+				<table id="message-board"></table>
 			</div>
 			
 			<!-- add comment page -->
 			<div id="add-message">
-				<button onclick="viewBoard()">Back to board</button>
+				<button id="view">Back to board</button>
 				<!-- Collect all of the juicy info -->
 				<form>
-					<input type="text" id="name">
-					<input type="text" id="comment">				
+					Name:<input type="text" id="name"><br>
+					Subject:<input type="text" id="subject" size="20"><br>
+					Comment:<input type="text" id="comment" size="160"><br>		
 				</form>
-				<button onclick="submit()">Add comment</button>
+				<button id="submitBtn" type="submit">Add comment</button>
 			</div>
 		</div>
 		
