@@ -1,0 +1,30 @@
+#message-board {
+	border-radius: 5px;
+	background-color: rgba(240, 128, 128, .85);
+	margin: 20px;
+	padding: 5px;
+	height: 200px;
+	display: block;
+}
+
+#btn {
+	/* border: none; */
+	border-radius: 5px;
+	background-color: rgba(240, 128, 128, .85);
+	font-size: 20px;
+	text-align: center;
+	margin-left: 50px;
+	padding: 10px;
+}
+
+#btn:hover {
+	background-color: #ddd;
+}
+
+form {
+	height: 100px;
+}
+
+#add-message {
+	display: none;
+}
