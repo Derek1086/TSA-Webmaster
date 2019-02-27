@@ -1,0 +1,496 @@
+body
+{
+	margin: 0 auto;
+	height: 2400px;
+	z-index: -1;
+}
+#shop-header
+{
+	font-size: 4.4vw;
+	text-align: center;
+	font-weight: 700;
+	font-family: 'Acme', sans-serif;
+	color: black;
+}
+
+#shopping-cart-container
+{
+	height: 60px;
+	width: 80px;
+	transform: translateY(-58px);
+	margin-left: 93%;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#shopping-cart-container:hover
+{
+	transform: translateY(-58px) rotate(45deg);
+}
+
+#shopping-cart
+{
+	height: 60px;
+	width: 80px;
+}
+
+#number-of-items
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 25px;
+	transform: translate(40px, -60px);
+	text-decoration: none;
+}
+
+.shop-container-clothes, .shop-container-album, .shop-container-merch, .shop-container-all
+{
+	margin-left: 7px;
+	border: 4px solid darkgray;
+	width: 96%;
+	height: 1000px;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 20px;
+	padding: 20px;
+}
+
+.shop-item
+{
+	margin-left: 20px;
+	height: 650px;
+	width: 400px;
+	border: 2px solid black;
+	transition: 0.5s;
+	box-shadow: 3px 3px darkgray;
+}
+
+.shop-item:hover
+{
+	transform: scale(1.03);
+	cursor: pointer;
+}
+
+.images
+{
+	height: 300px;
+	width: 85%;
+}
+
+.img-holder
+{
+	width: 80%;
+	height: 50%;
+}
+
+.info-item-holder
+{
+	width: 100%;
+	height: 53%;
+	background-color: #f08080;
+	z-index: -1;
+}
+
+.item-name
+{
+	width: 100%;
+	height: 40px;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.5vw;
+	text-align: center;
+}
+
+.prices-clothes, .sizes, .color-clothing, .return-clothes-size, .return-clothes-color, .return-clothes-tax, .return-album-tax, .album-release-date, .album-songs, .prices-albums, .quantity-clothes, 
+.prices-merch, .quantity-album, .quantity-merch, .merch-details, .amount-merch, .return-merch-tax
+{
+	width: 100%;
+	height: 40px;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.5vw;
+	margin-left: 5px;
+}
+
+.color-clothing
+{
+	transform: translateY(-40px);
+}
+
+.amount-clothes, .clothing-size, .clothing-color, .clothing-tax, .amount-albums, .album-tax, .amount-merch, .merch-tax
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 20px;
+}
+
+.clothing-sizes-collection, .clothing-colors-collection
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+}
+
+.clothing-sizes-collection > div
+{
+	background-color: white;
+	border: 2px solid black;
+	height: 1.2vw;
+	width: 1vw;
+	font-family: 'Acme', sans-serif;
+	font-size: 1vw;
+	margin: 4px;
+	transform: translate(-55px, -55px);
+	text-align: center;
+	padding: 10px;
+	transition: 0.5s;
+	box-shadow: 2px 2px darkgray;
+}
+
+.clothing-colors-collection > div
+{
+	background-color: white;
+	border: 2px solid black;
+	height: 1.2vw;
+	width: 2.5vw;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.2vw;
+	margin: 4px;
+	transform: translate(-5px, -90px);
+	text-align: center;
+	padding: 10px;
+	transition: 0.5s;
+	box-shadow: 2px 2px darkgray;
+}
+
+.size-cloth:hover, .color-cloth:hover, .calculate-button-clothes:hover, .calculate-button-album:hover, .calculate-button-merch:hover, .purchase-item:hover, #buy-cart-items-button:hover
+{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+.quantity-clothes-input, .quantity-album-input, .quantity-merch-input
+{
+	border: 2px solid black;
+	box-shadow: 2px 2px darkgray;
+	height: 20px;
+	font-family: 'Acme', sans-serif;
+	width: 70px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+.merch-detail-list > li
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 15px;
+	transform: translateY(-30px);
+}
+
+.calculate-button-clothes, .calculate-button-album, .calculate-button-merch
+{
+	margin: 0 auto;
+	width: 60px;
+	height: 20px;
+	transform: translateY(-110px);
+	font-family: 'Acme', sans-serif;
+	font-size: 15px;
+	border: 2px solid black;
+	text-align: center;
+	transition: 0.5s;
+	padding: 5px;
+	background-color: white;
+	z-index: 2;
+	box-shadow: 2px 2px darkgray;
+}
+
+.calculate-bar
+{
+	width: 100%;
+	background-color: black;
+	height: 3px;
+	transform: translateY(-90px);
+	z-index: 1;
+}
+
+.purchase-item
+{
+	width: 100px;
+	height: 20px;
+	font-family: 'Acme', sans-serif;
+	font-size: 15px;
+	border: 2px solid black;
+	text-align: center;
+	transition: 0.5s;
+	box-shadow: 2px 2px darkgray;
+	padding: 5px;
+	background-color: white;
+	margin: 0 auto;
+	transform: translateY(-100px);
+}
+
+#purchase-successful
+{
+	margin: 0 auto;
+	width: 36.8%;
+	height: 250px;
+	border: 4px solid black;
+	background-color: rgb(240, 128, 128);
+	color: black;
+	box-shadow: 2px 2px darkgray;
+	font-family: 'Acme', sans-serif;
+	font-size: 2.8vw;
+	padding: 5px;
+	text-align: center;
+	transform: translateY(-6000px);
+	margin-left: 35%;
+}
+
+#checkmark 
+{
+	margin-top: 15px;
+	height: 60px;
+	width: 60px;
+}
+
+.exit-purchase-container
+{
+	transform: translate(440px, -55px);
+	cursor: pointer;
+	width: 30px;
+	height: 30px;
+}
+
+#exit-button-purchase-successful
+{
+	width: 30px;
+	height: 30px;
+	margin-bottom: 0px;
+	transform: translate(35px, 90px);
+}
+
+#filter
+{
+	margin-left: 7px;
+}
+
+#shop-filter
+{
+	width: 200px;
+	height: 40px;
+	border: 2px solid darkgray;
+	background-color: #f08080;
+	font-family: 'Acme', sans-serif;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+#choose-tour-date, #choose-tour-dateall
+{
+	width: 250px;
+	height: 40px;
+	border: 2px solid black;
+	background-color: #f08080;
+	font-family: 'Acme', sans-serif;
+	font-size: 17Spx;
+	cursor: pointer;
+}
+
+/*Checkout Section*/
+#check-out-container
+{
+	margin-left: 7px;
+	border: 4px solid #f08080;
+	width: 99%;
+	height: 1000px;
+	transform: translateY(-3400px);
+}
+
+#check-out-header
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 3.3vw;
+	margin-top: 5px;
+	margin-left: 10px;
+	text-align: center;
+}
+
+#check-out-taskbar
+{
+	width: 100%;
+	background-color: #f08080;
+	height: 90px;
+	display: flex;
+	flex-direction: row;
+}
+
+#cart-item-name
+{
+	height: 65px;
+	width: 35%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.83vw;
+	color: black;
+	text-align: center;
+	padding-top: 25px;
+	border-right: 3px solid darkgray;
+}
+
+#cart-item-quantity
+{
+	height: 65px;
+	width: 30%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.83vw;
+	color: black;
+	text-align: center;
+	padding-top: 25px;
+	border-right: 3px solid darkgray;
+}
+
+#cart-item-price
+{
+	height: 65px;
+	width: 35%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.83vw;
+	color: black;
+	text-align: center;
+	padding-top: 25px;
+}
+
+#check-out-entries-container
+{
+	border: 2px solid darkgray;
+	width: 90%;
+	height: 60%;
+	margin: 0 auto;
+	margin-top: 50px;
+	overflow: auto;
+}
+
+.shop-item-element
+{
+	display: flex;
+	width: 100%;
+	height: 20%;
+	border-bottom: 3px solid darkgray;
+}
+
+.shop-item-element:hover
+{
+	cursor: pointer;
+}
+
+.shop-item-tocart-name
+{
+	height: 120px;
+	width: 35%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1vw;
+	padding: 30px;
+	margin-top: 15px;
+	text-align: left;
+	margin-left: 120px;
+}
+
+.shop-item-tocart-quantity
+{
+	height: 120px;
+	width: 30%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.5vw;
+	padding: 30px;
+	margin-top: 15px;
+	text-align: left;
+	margin-left: 370px;
+}
+
+.shop-item-tocart-price
+{
+	height: 120px;
+	width: 35%;
+	font-family: 'Acme', sans-serif;
+	font-size: 1.5vw;
+	padding: 30px;
+	margin-top: 15px;
+	text-align: left;
+	margin-left: 350px;
+}
+
+#total-price-tag, #total-tax-tag
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 1.83vw;
+	margin-left: 70%;
+	padding: 30px;
+}
+
+#total-price-container, #total-tax-container
+{
+	font-family: 'Acme', sans-serif;
+	font-size: 1.83vw;
+	margin-left: 80%;
+	border: 2px solid black;
+	box-shadow: 2px 2px darkgray;
+	width: 130px;
+	height: 30px;
+	transform: translateY(-34px);
+	margin-left: 40%;
+	text-align: center;
+}
+
+.on-hover-cart-item
+{
+	width: 89.2%;
+	height: 80px;
+	background-color: darkgray;
+	position: absolute;
+	text-align: center;
+	padding-top: 40px;
+	font-size: 30px;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+.on-hover-cart-item:hover
+{
+	opacity: 0.8;
+}
+
+#buy-cart-items-button
+{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 2.2vw;
+	width: 14.8%;
+	height: 50px;
+	border: 2px solid black;
+	box-shadow: 2px 2px darkgray;
+	padding: 10px;
+	transition: 0.5s;
+	transform: translateY(-225px);
+}
+
+#cart-purchase-successful
+{
+	margin: 0 auto;
+	width: 500px;
+	height: 250px;
+	border: 4px solid black;
+	background-color: rgb(240, 128, 128);
+	color: black;
+	box-shadow: 2px 2px darkgray;
+	font-family: 'Acme', sans-serif;
+	font-size: 35px;
+	padding: 5px;
+	text-align: center;
+	transform: translateY(-900px);
+	transition: 0.5s;
+	display: none;
+}
+
+#returning-cart-total-price-container
+{
+	margin-top: 30px;
+	font-family: 'Acme', sans-serif;
+	font-size: 35px;
+}

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="PopShopCss.css">
+	<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+    <title>Pop Shop</title>
+	
+	<style>
+		/* width */
+		::-webkit-scrollbar 
+		{
+			width: 10px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track 
+		{
+			background: #f1f1f1; 
+		}
+ 
+		/* Handle */
+		::-webkit-scrollbar-thumb 
+		{
+			background: #888; 
+		}
+
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover 
+		{
+			background: #f08080; 
+		}
+		
+		* 
+		{
+			font-family: 'Acme', sans-serif;
+		}
+
+		#menu-bar 
+		{
+			width: 100%;
+			position: fixed;
+		}
+	
+		#title 
+		{
+			float: right;	
+			width: 300px;
+			height: 200px;
+			margin-top: -90px;
+			position: relative;
+		}
+
+		ul 
+		{
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #F08080;
+			float: right;
+			width: 100%;
+			top: 0;
+			z-index: -1;
+			margin: 0;
+			padding: 0;
+		}
+
+		li 
+		{
+			float: left;
+			color: #FFF;
+		}
+
+		li a 
+		{
+			transition: 0.5s;
+			display: block;
+			color: #FFF;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+		}
+
+		li img 
+		{
+			display: block;
+			float: right;
+			text-decoration: none;
+			float: right;
+			width: 150px;
+			height: 100px;
+			border: 1px solid white;
+		}
+
+		li a:hover 
+		{
+			background-color: #111;
+			cursor: pointer;
+		}
+
+</style>
+	
+  </head>
+  
+  <body>
+	<div id="menu-bar">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="PopShop.html">Pop Shop</a></li>
+			<li><a href="Tour.html">Tour</a></li>
+			<li><a href="News.html">News</a></li>
+			<li><a href="Bio.html">Bio</a></li>
+			<li><a href="MessageBoard.html">Message Board</a></li>
+		</ul>
+		<img src='logo.png' id="title" style="z-index: 6;" alt='Pop goes the weasel'>
+	</div>
+	<br><br><br>
+  
+	<header id="shop-header">Pop Shop</header><br><br>
+	
+	<!--Shop Section-->
+	<div id="filter">
+		<select id="shop-filter" onchange="loadDropdownShopOutput()">
+			<option value="merch">Merch/Tickets</option>
+			<option value="clothing">Clothing</option>
+			<option value="albums">Albums</option>
+			<option value="merch">All</option>
+		</select>
+	</div><br>
+	
+	<a style="color: black; text-decoration: none;" href="#check-out-container">
+	<div onclick="" id="shopping-cart-container">
+		<img style="transform: translateY(25px);" id="shopping-cart" src="http://cdn.onlinewebfonts.com/svg/download_290616.png"/>
+		<div id="number-of-items"><span id="amount-of-items">0<span></div>
+	</div>
+	</a>
+	
+	<!--Clothes version of shop-->
+	<div class="shop-container-clothes" id="clothes-shop" style="height: 800px; visibility: hidden;">
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" style="margin-top: 0%;" id="cloth-1-image" src="white.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-1-item-name">Weasel Shirt</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-1').innerHTML = 'XS'; document.getElementById('size-cloth-1').value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-1').innerHTML = 'S'; document.getElementById('size-cloth-1').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-1').innerHTML = 'M'; document.getElementById('size-cloth-1').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-1').innerHTML = 'L'; document.getElementById('size-cloth-1').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-1').innerHTML = 'XL'; document.getElementById('size-cloth-1').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-1').innerHTML = 'White'; document.getElementById('color-cloth-1').value = 'White'; document.getElementById('cloth-1-image').src = 'white.png';">White</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-1').innerHTML = 'Black'; document.getElementById('color-cloth-1').value = 'Black'; document.getElementById('cloth-1-image').src = 'black.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-1').innerHTML = 'Red'; document.getElementById('color-cloth-1').value = 'Red'; document.getElementById('cloth-1-image').src = 'red.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-1').innerHTML = 'Blue'; document.getElementById('color-cloth-1').value = 'Blue'; document.getElementById('cloth-1-image').src = 'blue.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-1').innerHTML = 'Orange'; document.getElementById('color-cloth-1').value = 'Orange'; document.getElementById('cloth-1-image').src = 'orange.png';">Orange</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-1-quantity" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-1"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-1"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-1"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth1Price()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-1-price"></span></div>
+				<div class="purchase-item" id="cloth-1-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" id="cloth-2-image" style="margin-top:5%;" src="beanie.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-2-item-name" style="font-size: 10px;">Weasel Beanie</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-2').innerHTML = 'XS'; document.getElementById('size-cloth-2').value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-2').innerHTML = 'S'; document.getElementById('size-cloth-2').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-2').innerHTML = 'M'; document.getElementById('size-cloth-2').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-2').innerHTML = 'L'; document.getElementById('size-cloth-2').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-2').innerHTML = 'XL'; document.getElementById('size-cloth-2').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-2').innerHTML = 'Regular'; document.getElementById('color-cloth-2').value = 'Regular'; document.getElementById('cloth-2-image').src = 'beanie.png';">Reg</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-2').innerHTML = 'Black'; document.getElementById('color-cloth-2').value = 'Black'; document.getElementById('cloth-2-image').src = 'beanieblack.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-2').innerHTML = 'Red'; document.getElementById('color-cloth-2').value = 'Red'; document.getElementById('cloth-2-image').src = 'beaniered.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-2').innerHTML = 'Blue'; document.getElementById('color-cloth-2').value = 'Blue'; document.getElementById('cloth-2-image').src = 'beanieblue.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-2').innerHTML = 'Pink'; document.getElementById('color-cloth-2').value = 'Pink'; document.getElementById('cloth-2-image').src = 'beaniepink.png';">Pink</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-2-quantity" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-2"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-2"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-2"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth2Price()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-2-price"></span></div>
+				<div class="purchase-item" id="cloth-2-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" id="cloth-3-image" style="margin-top: 0%;" src="white3.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-3-item-name">Weasel Hoodie</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-3').innerHTML = 'XS'; document.getElementById('size-cloth-3').value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-3').innerHTML = 'S'; document.getElementById('size-cloth-3').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-3').innerHTML = 'M'; document.getElementById('size-cloth-3').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-3').innerHTML = 'L'; document.getElementById('size-cloth-3').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-3').innerHTML = 'XL'; document.getElementById('size-cloth-3').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-3').innerHTML = 'White'; document.getElementById('color-cloth-3').value = 'White'; document.getElementById('cloth-3-image').src = 'white3.png';">White</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-3').innerHTML = 'Black'; document.getElementById('color-cloth-3').value = 'Black'; document.getElementById('cloth-3-image').src = 'black2.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-3').innerHTML = 'Red'; document.getElementById('color-cloth-3').value = 'Red'; document.getElementById('cloth-3-image').src = 'red3.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-3').innerHTML = 'Blue'; document.getElementById('color-cloth-3').value = 'Blue'; document.getElementById('cloth-3-image').src = 'blue2.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-3').innerHTML = 'Orange'; document.getElementById('color-cloth-3').value = 'Orange'; document.getElementById('cloth-3-image').src = 'orange3.png';">Orange</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-3-quantity" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-3"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-3"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-3"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth3Price()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-3-price"></span></div>
+				<div class="purchase-item" id="cloth-3-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--Album version of shop-->
+	<div class="shop-container-album" id="album-shop" style="transform: translateY(-848px); visibility: hidden; height: 800px">
+		<div class="shop-item">
+			<div class="img-holder"><img style="margin-top: 15%; margin: 0 auto; padding-top: 50px;" src="album1.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="album-1-item-name">The Time I Swam With My Otterney</div>
+				<div class="album-release-date">Release Date: 2019</div>
+				<div class="album-songs">Songs: Here comes the weasel, Poppity Shoppity</div>
+				<div class="quantity-album">Quantity: <input class="quantity-album-input" id="album-1-quantity" value="0" type="number" min="0" max="999"/></div>
+				<div class="return-album-tax">Tax: <span class="album-tax" id="tax-album-1"></span></div>
+				<div class="calculate-bar" style="transform: translateY(17px);"></div>
+				<div class="calculate-button-album" style="transform: translateY(0px);" onclick="calculateAlbum1Price()">Calculate</div>
+				<div class="prices-albums" style="transform: translateY(20px);">Price: <span class="amount-albums" id="album-1-price"></span></div>
+				<div class="purchase-item" style="transform: translateY(76px);" id="album-1-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+			<div class="shop-item">
+			<div class="img-holder"><img style="margin-top: 15%; margin: 0 auto; padding-top: 50px;" src="album2.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="album-2-item-name">my ottermost shell</div>
+				<div class="album-release-date">Release Date: 2019</div>
+				<div class="album-songs">Songs: lucid weasels, all weasels the same</div>
+				<div class="quantity-album">Quantity: <input class="quantity-album-input" id="album-2-quantity" value="0" type="number" min="0" max="999"/></div>
+				<div class="return-album-tax">Tax: <span class="album-tax" id="tax-album-2"></span></div>
+				<div class="calculate-bar" style="transform: translateY(17px);"></div>
+				<div class="calculate-button-album" style="transform: translateY(0px);" onclick="calculateAlbum2Price()">Calculate</div>
+				<div class="prices-albums" style="transform: translateY(20px);">Price: <span class="amount-albums" id="album-2-price"></span></div>
+				<div class="purchase-item" style="transform: translateY(76px);" id="album-2-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+	</div>
+	
+	<!--Merch version of shop-->
+	<div class="shop-container-merch" id="merch-shop" style="transform: translateY(-1696px);">
+		<div class="shop-item">
+			<div class="img-holder"><img style="width: 85%; margin-left: 25%; margin-top: 10%;" src="plush.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="merch-1-item-name">Weasel Plush Toy</div>
+				<div class="quantity-merch">Quantity: <input class="quantity-merch-input" id="merch-1-quantity" value="0" type="number" min="0" max="999"/></div>
+				<div class="merch-details">Details: Plush Weasel Toy, Made in China</div>
+				<ul class="merch-detail-list">
+					<li>ex</li>
+					<li>ex</li>
+					<li>ex</li>
+				</ul>
+				<div class="return-merch-tax" style="transform: translateY(-20px);">Tax: <span class="merch-tax" id="tax-merch-1"></span></div><br><br>
+				<div class="calculate-bar" style="transform: translateY(-10px);"></div>
+				<div class="calculate-button-merch" style="transform: translateY(-27px);" onclick="calculateMerch1Price()">Calculate</div>
+				<div class="prices-merch" style="transform: translateY(-10px);">Price: <span class="amount-merch" id="merch-1-price"></span></div><br><br>
+				<div class="purchase-item" style="transform: translateY(29px);" id="merch-1-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+			<div class="img-holder"><img style="width: 85%; margin-left: 25%; margin-top: 10%;" src="Ticket.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="merch-2-item-name">Tickets</div>
+				<div class="quantity-merch">Quantity: <input class="quantity-merch-input" id="merch-2-quantity" value="0" type="number" min="0" max="999"/></div><br>
+				<div id="merch-2-select-date">
+					<select id="choose-tour-date">
+						<option>Dallas, TX</option>
+						<option>Jackson, MS</option>
+						<option>Montgomery, AL</option>
+						<option>Atlanta, GA</option>
+						<option>Oklahoma City, OK</option>
+						<option>Phoenix, AZ</option>
+						<option>Las Vegas, NV</option>
+						<option>San Diego, CA</option>
+						<option>Salem, OR</option>
+						<option>Olympia, WA</option>
+						<option>Austin, TX</option>
+					</select><br><br><br><br>
+				</div>
+				<div class="return-merch-tax" style="transform: translateY(-20px);">Tax: <span class="merch-tax" id="tax-merch-2"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-10px);"></div>
+				<div class="calculate-button-merch" style="transform: translateY(-27px);" onclick="calculateMerch2Price()">Calculate</div>
+				<div class="prices-merch" style="transform: translateY(-10px);">Price: <span class="amount-merch" id="merch-2-price"></span></div>
+				<div class="purchase-item" style="transform: translateY(29px);" id="merch-2-cart-button" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	<!--Change ids and script to comepensate for all-->
+	
+	<!--All version of shop-->
+	<div class="shop-container-all" id="all-shop" style="transform: translateY(-2744px); visibility: hidden; height: 2200px;">
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" style="margin-top: 0%;" id="cloth-1-imageall" src="white.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-1-item-nameall">Weasel Shirt</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-1all').innerHTML = 'XS'; document.getElementById('size-cloth-1'all).value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-1all').innerHTML = 'S'; document.getElementById('size-cloth-1all').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-1all').innerHTML = 'M'; document.getElementById('size-cloth-1all').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-1all').innerHTML = 'L'; document.getElementById('size-cloth-1all').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-1all').innerHTML = 'XL'; document.getElementById('size-cloth-1all').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-1all').innerHTML = 'White'; document.getElementById('color-cloth-1all').value = 'White'; document.getElementById('cloth-1-image').src = 'white.png';">White</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-1all').innerHTML = 'Black'; document.getElementById('color-cloth-1').value = 'Black'; document.getElementById('cloth-1-image').src = 'black.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-1all').innerHTML = 'Red'; document.getElementById('color-cloth-1all').value = 'Red'; document.getElementById('cloth-1-image').src = 'red.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-1all').innerHTML = 'Blue'; document.getElementById('color-cloth-1all').value = 'Blue'; document.getElementById('cloth-1-image').src = 'blue.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-1all').innerHTML = 'Orange'; document.getElementById('color-cloth-1all').value = 'Orange'; document.getElementById('cloth-1-image').src = 'orange.png';">Orange</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-1-quantityall" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-1all"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-1all"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-1all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth1PriceAll()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-1-priceall"></span></div>
+				<div class="purchase-item" id="cloth-1-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" id="cloth-2-imageall" style="margin-top:5%;" src="beanie.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-2-item-nameall" style="font-size: 10px;">Weasel Beanie</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-2all').innerHTML = 'XS'; document.getElementById('size-cloth-2all').value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-2all').innerHTML = 'S'; document.getElementById('size-cloth-2all').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-2all').innerHTML = 'M'; document.getElementById('size-cloth-2all').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-2all').innerHTML = 'L'; document.getElementById('size-cloth-2all').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-2all').innerHTML = 'XL'; document.getElementById('size-cloth-2all').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-2all').innerHTML = 'Regular'; document.getElementById('color-cloth-2all').value = 'Regular'; document.getElementById('cloth-2-image').src = 'beanie.png';">Reg</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-2all').innerHTML = 'Black'; document.getElementById('color-cloth-2all').value = 'Black'; document.getElementById('cloth-2-image').src = 'beanieblack.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-2all').innerHTML = 'Red'; document.getElementById('color-cloth-2all').value = 'Red'; document.getElementById('cloth-2-image').src = 'beaniered.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-2all').innerHTML = 'Blue'; document.getElementById('color-cloth-2all').value = 'Blue'; document.getElementById('cloth-2-image').src = 'beanieblue.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-2all').innerHTML = 'Pink'; document.getElementById('color-cloth-2all').value = 'Pink'; document.getElementById('cloth-2-image').src = 'beaniepink.png';">Pink</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-2-quantityall" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-2all"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-2all"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-2all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth2PriceAll()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-2-priceall"></span></div>
+				<div class="purchase-item" id="cloth-2-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+		<center>
+		<div  class="img-holder" >
+			<img class="images" id="cloth-3-imageall" style="margin-top: 0%;" src="white3.png"></img>
+		</div>
+		</center>
+			<div class="info-item-holder" style="margin-top: 76.3%;">
+				<div class="item-name" id="cloth-3-item-nameall">Weasel Hoodie</div>
+				<div class="sizes">Sizes: </div>
+				<div class="clothing-sizes-collection">
+					<div class="size-cloth" value="XS" onclick="document.getElementById('size-cloth-3all').innerHTML = 'XS'; document.getElementById('size-cloth-3all').value = 'XS';">XS</div>
+					<div class="size-cloth" value="S" onclick="document.getElementById('size-cloth-3all').innerHTML = 'S'; document.getElementById('size-cloth-3all').value = 'S';">S</div>
+					<div class="size-cloth" value="M" onclick="document.getElementById('size-cloth-3all').innerHTML = 'M'; document.getElementById('size-cloth-3all').value = 'M';">M</div>
+					<div class="size-cloth" value="L" onclick="document.getElementById('size-cloth-3all').innerHTML = 'L'; document.getElementById('size-cloth-3all').value = 'L';">L</div>
+					<div class="size-cloth" value="XL" onclick="document.getElementById('size-cloth-3all').innerHTML = 'XL'; document.getElementById('size-cloth-3all').value = 'XL';">XL</div>
+				</div>
+				<div class="color-clothing">Colors: </div>
+				<div class="clothing-colors-collection">
+					<div class="color-cloth" value="White" onclick="document.getElementById('color-cloth-3all').innerHTML = 'White'; document.getElementById('color-cloth-3all').value = 'White'; document.getElementById('cloth-3-image').src = 'white3.png';">White</div>
+					<div class="color-cloth" value="Black" onclick="document.getElementById('color-cloth-3all').innerHTML = 'Black'; document.getElementById('color-cloth-3all').value = 'Black'; document.getElementById('cloth-3-image').src = 'black2.png';">Black</div>
+					<div class="color-cloth" value="Red" onclick="document.getElementById('color-cloth-3all').innerHTML = 'Red'; document.getElementById('color-cloth-3all').value = 'Red'; document.getElementById('cloth-3-image').src = 'red3.png';">Red</div>
+					<div class="color-cloth" value="Blue" onclick="document.getElementById('color-cloth-3all').innerHTML = 'Blue'; document.getElementById('color-cloth-3all').value = 'Blue'; document.getElementById('cloth-3-image').src = 'blue2.png';">Blue</div>
+					<div class="color-cloth" value="Orange" onclick="document.getElementById('color-cloth-3all').innerHTML = 'Orange'; document.getElementById('color-cloth-3all').value = 'Orange'; document.getElementById('cloth-3-image').src = 'orange3.png';">Orange</div>
+				</div>
+				<div class="quantity-clothes" style="transform: translateY(-80px);">Quantity: <input class="quantity-clothes-input" value="0" id="cloth-3-quantityall" type="number" min="0" max="999"/></div>
+				<div class="return-clothes-size" style="transform: translateY(-80px);">Size: <span class="clothing-size" id="size-cloth-3all"></span></div>
+				<div class="return-clothes-color" style="transform: translateY(-90px);">Color: <span class="clothing-color" id="color-cloth-3all"></span></div>
+				<div class="return-clothes-tax" style="transform: translateY(-100px);">Tax: <span class="clothing-tax" id="tax-cloth-3all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-100px);"></div>
+				<div class="calculate-button-clothes" onclick="calculateCloth3PriceAll()" style="transform: translateY(-120px);">Calculate</div>
+				<div class="prices-clothes" style="transform: translateY(-115px);">Price: <span class="amount-clothes"  id="cloth-3-priceall"></span></div>
+				<div class="purchase-item" id="cloth-3-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		<div class="shop-item">
+			<div class="img-holder"><img style="width: 85%; margin-left: 25%; margin-top: 10%;" src="plush.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="merch-1-item-nameall">Weasel Plush Toy</div>
+				<div class="quantity-merch">Quantity: <input class="quantity-merch-input" id="merch-1-quantityall" value="0" type="number" min="0" max="999"/></div>
+				<div class="merch-details">Details: Plush Weasel Toy, Made in China</div>
+				<ul class="merch-detail-list">
+					<li>ex</li>
+					<li>ex</li>
+					<li>ex</li>
+				</ul>
+				<div class="return-merch-tax" style="transform: translateY(-20px);">Tax: <span class="merch-tax" id="tax-merch-1all"></span></div><br><br>
+				<div class="calculate-bar" style="transform: translateY(-10px);"></div>
+				<div class="calculate-button-merch" style="transform: translateY(-27px);" onclick="calculateMerch1PriceAll()">Calculate</div>
+				<div class="prices-merch" style="transform: translateY(-10px);">Price: <span class="amount-merch" id="merch-1-priceall"></span></div><br><br>
+				<div class="purchase-item" style="transform: translateY(29px);" id="merch-1-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+		<div class="shop-item">
+			<div class="img-holder"><img style="width: 85%; margin-left: 25%; margin-top: 10%;" src="Ticket.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="merch-2-item-nameall">Tickets</div>
+				<div class="quantity-merch">Quantity: <input class="quantity-merch-input" id="merch-2-quantityall" value="0" type="number" min="0" max="999"/></div><br>
+				<div id="merch-2-select-date">
+					<select id="choose-tour-dateall">
+						<option>Dallas, TX</option>
+						<option>Jackson, MS</option>
+						<option>Montgomery, AL</option>
+						<option>Atlanta, GA</option>
+						<option>Oklahoma City, OK</option>
+						<option>Phoenix, AZ</option>
+						<option>Las Vegas, NV</option>
+						<option>San Diego, CA</option>
+						<option>Salem, OR</option>
+						<option>Olympia, WA</option>
+						<option>Austin, TX</option>
+					</select><br><br><br><br>
+				</div>
+				<div class="return-merch-tax" style="transform: translateY(-20px);">Tax: <span class="merch-tax" id="tax-merch-2all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(-10px);"></div>
+				<div class="calculate-button-merch" style="transform: translateY(-27px);" onclick="calculateMerch2PriceAll()">Calculate</div>
+				<div class="prices-merch" style="transform: translateY(-10px);">Price: <span class="amount-merch" id="merch-2-priceall"></span></div>
+				<div class="purchase-item" style="transform: translateY(29px);" id="merch-2-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		<div class="shop-item">
+			<div class="img-holder"><img style="margin-top: 15%; margin: 0 auto; padding-top: 50px;" src="album1.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="album-1-item-nameall">The Time I Swam With My Otterney</div>
+				<div class="album-release-date">Release Date: 2019</div>
+				<div class="album-songs">Songs: Here comes the weasel, Poppity Shoppity</div>
+				<div class="quantity-album">Quantity: <input class="quantity-album-input" id="album-1-quantityall" value="0" type="number" min="0" max="999"/></div>
+				<div class="return-album-tax">Tax: <span class="album-tax" id="tax-album-1all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(17px);"></div>
+				<div class="calculate-button-album" style="transform: translateY(0px);" onclick="calculateAlbum1PriceAll()">Calculate</div>
+				<div class="prices-albums" style="transform: translateY(20px);">Price: <span class="amount-albums" id="album-1-priceall"></span></div>
+				<div class="purchase-item" style="transform: translateY(76px);" id="album-1-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+			<div class="shop-item">
+			<div class="img-holder"><img style="margin-top: 15%; margin: 0 auto; padding-top: 50px;" src="album2.png"/></div>
+			<div class="info-item-holder" style="height: 50%;">
+				<div class="item-name" id="album-2-item-nameall">my ottermost shell</div>
+				<div class="album-release-date">Release Date: 2019</div>
+				<div class="album-songs">Songs: lucid weasels, all weasels the same</div>
+				<div class="quantity-album">Quantity: <input class="quantity-album-input" id="album-2-quantityall" value="0" type="number" min="0" max="999"/></div>
+				<div class="return-album-tax">Tax: <span class="album-tax" id="tax-album-2all"></span></div>
+				<div class="calculate-bar" style="transform: translateY(17px);"></div>
+				<div class="calculate-button-album" style="transform: translateY(0px);" onclick="calculateAlbum2PriceAll()">Calculate</div>
+				<div class="prices-albums" style="transform: translateY(20px);">Price: <span class="amount-albums" id="album-2-priceall"></span></div>
+				<div class="purchase-item" style="transform: translateY(76px);" id="album-2-cart-buttonall" onclick="movePurchaseSuccessful(this.id)">Add to cart</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<!--Purchase Successful Div-->
+	<div id="purchase-successful">
+	<script href="PopShopJS.js"></script> <!--???-->
+		<span style="margin-top: 50px;">Successfully added to cart</span>
+		<div class="exit-purchase-container" onclick="closePurchaseSuccessful()">
+			<img id="exit-button-purchase-successful" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Letter_x.svg/1200px-Letter_x.svg.png"/>
+		</div>
+		
+		<p>Number of items: <span id="amount-of-cart-items"></span></p>
+	</div>
+	
+	<!--Checkout section-->
+	<div id="check-out-container" style="z-index: -1; transform: translateY(-3000px);">
+		<p id="check-out-header" style="z-index: -1;">Shopping Cart</p> 
+		<div id="check-out-taskbar">
+			<div id="cart-item-name">Item Description</div>
+			<div id="cart-item-quantity">Quantity</div>
+			<div id="cart-item-price">Price</div>
+		</div>
+		<div id="check-out-entries-container" style="z-index: -1;">
+		</div>
+		<div id="total-tax-tag">
+			Tax: 
+			<div id="total-tax-container">
+				<span id="return-total-tax-container"></span>
+			</div>
+		</div>
+		<div id="total-price-tag" style="transform: translateY(-70px)">
+			Total Price: 
+			<div id="total-price-container">
+				<span id="return-total-price-container"></span>
+			</div>
+		</div>
+		
+		<div id="buy-cart-items-button" onclick="activatePurchaseItems()">Purchase</div>
+		
+		<div id="cart-purchase-successful">
+			Your purchase was successful
+			<div class="exit-purchase-container" id="cart-purchase-container-exit-button" onclick="document.getElementById('cart-purchase-successful').style.display = 'none';">
+				<img id="exit-button-purchase-successful" style="transform: translate(35px, 95px);"src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Letter_x.svg/1200px-Letter_x.svg.png"/>
+			</div>
+			<div id="returning-cart-total-price-container">Total Price: <span id="returning-cart-total-price"></span>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+			<p id="copyright">
+				&copy Derek, Tristian and Megan
+				
+				Pop Goes The Weasel.&reg
+			</p>
+			<div id="social_media">
+				<a href="https://www.instagram.com"><img src="instagram.png" alt="instagram" class="sm"></a>
+				<a href="https://www.youtube.com"><img src="youtube.png" alt="youtube" class="sm"></a>
+				<a href="https://www.linkedin.com"><img src="linkedin.png" alt="linkedin" class="sm"></a>
+				<a href="https://www.pinterest.com"><img src="pintrest.png" alt="pintrest" class="sm"></a>
+				<a href="https://www.twitter.com"><img src="twitter.png" alt="twitter" class="sm"></a>
+			</div>
+			<!--TODO: Copyright
+					: -->
+		</div>
+		
+	<script src="PopShopJS.js"></script>
+  </body>
+</html>
