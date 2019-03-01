@@ -11,13 +11,15 @@ body {
 	width: 100%;
 	position: fixed;
 	margin: 0;
+	padding: 0;
 }
 	
 img {
 	float: right;	
 	width: 300px;
 	height: 200px;
-	margin-top: -90px;
+	margin: -90px 0 -90px 0;
+	padding: 0;
 }
 
 ul {
@@ -43,6 +45,7 @@ li a {
 	text-align: center;
 	padding: 14px 16px;
 	text-decoration: none;
+	margin:0;
 }
 
 li img {
@@ -75,10 +78,6 @@ li a:hover {
 	text-align: center;
 }
 
-#copyright {
-	
-}
-
 .sm {
 	width: 20px;
 	height: 20px;
@@ -89,3 +88,8 @@ h1 {
 	text-align: center;
 	position: relative;
 }
+
+#space {
+	height: 100px;
+}
+
