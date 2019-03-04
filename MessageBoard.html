@@ -6,10 +6,35 @@
 		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 		<link href="../style.css" rel="stylesheet">
 		<link href="../MessageBoardCss.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			@media (max-width: 810px) {
+				img {display: none;}
+				.nav li:not(:first-child) {display:none;}
+				.nav li.icon {
+					float: right;
+					display: block;
+				}
+			}
+
+			@media (max-width: 810px) {
+				.nav.responsive {position: relative;}
+				.nav.responsive li.icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+				.nav.responsive a {
+					float: none;
+					display: block;
+					text-align: left;
+				}
+			}
+		</style>
 	</head>
 	
 	<body>
-		<div id="menu-bar">
+		<div id="menu-bar" class="nav">
 			<ul>
 				<li><a href="index.html">Home</a></li>
 				<li><a href="PopShop.html">Pop Shop</a></li>
@@ -18,33 +43,39 @@
 				<li><a href="Bio.html">Bio</a></li>
 				<li><a href="MessageBoard.html">Message Board</a></li>
 				<li><a href="About.html">About</a></li>
+				<li class="icon"><a href="javascript:void(0);" onclick="navFunc()">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
 			</ul>
 			<img src='../Images/logo.png' id="title" alt='Pop goes the weasel'>
 		</div>
-		<br>
+		<br><br><br><br>
 		<h1>Fan Messages</h1>
 		
 		<div id="main-page">
 			<!-- Message board page -->
 			<div id="message-page">
 				
-				<button id="btn">Add a post</button>
-				<table id="message-board"></table>
+				<button id="btn" onclick="addMessage()">Add a post</button>
+				<table id="message-board">
+					<tr></tr>
+				</table>
 			</div>
 			
 			<!-- add comment page -->
 			<div id="add-message">
-				<button id="view">Back to board</button>
+				<button id="view" onclick="viewBoard()">Back to board</button><br>
 				<!-- Collect all of the juicy info -->
 				<form>
-					Name:<input type="text" id="name"><br>
-					Subject:<input type="text" id="subject" size="20"><br>
-					Comment:<input type="text" id="comment" size="160"><br>		
+					Name: <input type="text" id="name"><br>
+					Subject: <input type="text" id="subject" size="20"><br>
+					Comment: <input type="text" id="comment" size="160"><br>		
 				</form>
-				<button id="submitBtn" type="submit">Add comment</button>
+				<button id="submitBtn" onclick="submit()">Add comment</button>
 			</div>
 		</div>
-		
+		<div id="space"></div>
 		<div id="footer">
 			<p id="copyright">
 				&copy Derek, Tristian and Megan
@@ -58,9 +89,8 @@
 				<a href="https://www.pinterest.com"><img src="../Images/pinterest.png" alt="pinterest" class="sm"></a>
 				<a href="https://www.twitter.com"><img src="../Images/twitter.png" alt="twitter" class="sm"></a>
 			</div>
-			<!--TODO: Copyright
-					: -->
 		</div>
 		<script src="../MessageBoardScript.js"></script>
+		<script src="../script.js"></script>
 	</body>
 </html>

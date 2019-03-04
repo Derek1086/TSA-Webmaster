@@ -6,6 +6,31 @@
 		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 		<link href="../style.css" rel="stylesheet">
 		<link href="../AboutCss.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			@media (max-width: 810px) {
+				img {display: none;}
+				.nav li:not(:first-child) {display:none;}
+				.nav li.icon {
+					float: right;
+					display: block;
+				}
+			}
+
+			@media (max-width: 810px) {
+				.nav.responsive {position: relative;}
+				.nav.responsive li.icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+				.nav.responsive a {
+					float: none;
+					display: block;
+					text-align: left;
+				}
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -18,10 +43,14 @@
 				<li><a href="Bio.html">Bio</a></li>
 				<li><a href="MessageBoard.html">Message Board</a></li>
 				<li><a href="About.html">About</a></li>
+				<li class="icon"><a href="javascript:void(0);" onclick="navFunc()">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
 			</ul>
 			<img src='../Images/logo.png' id="title" alt='Pop goes the weasel'>
 		</div>
-		<br>
+		<br><br>
 		<h1>About</h1>
 		<button onclick="visible()">CTE Program</button>
 		<button onclick="visible()">TSA Chapter</button>
@@ -30,8 +59,7 @@
 		<div id="CTE">
 			<button class="collapsible">Agriculture and Animal Science</button>
 			<div class="content">
-				<p>This is the information and pictures about Agriculture and Animal Science</p>
-				<p>Classes offered in Agriculture and Animal Science</p>
+				<h3>Classes offered in Agriculture and Animal Science</h3>
 				<ol>
 					<li>Principles of Agricultural Science</li>
 					<li>Agricultural Mechanics and Metal Technologies</li>
@@ -46,7 +74,7 @@
 			</div>
 			<button class="collapsible">Auto Tech</button>
 			<div class="content">
-				<p>This is the information and pictures about Auto Tech</p>
+				<h3>Classes offered in Automotive Technology</h3>
 				<ol>
 					<li>Automotive Basics</li>
 					<li>Small Engine Technology</li>
@@ -57,7 +85,7 @@
 			</div>
 			<button class="collapsible">Business and Accounting</button>
 			<div class="content">
-				<p>This is the information and pictures about Business and Accounting</p>
+				<h3>Classes offered in Business and Accounting</h3>
 				<ol>
 					<li>Principles of Business</li>
 					<li>Business Information Management</li>
@@ -69,7 +97,7 @@
 			</div>
 			<button class="collapsible">Computer Science/Cyber Security</button>
 			<div class="content">
-				<p>This is the information and pictures about Computer Science/Cyber Security</p>
+				<h3>Classes offered in Computer Science/Cyber Security</h3>
 				<ol>
 					<li>Computer Science</li>
 					<li>AP Computer Science A</li>
@@ -83,7 +111,7 @@
 			</div>
 			<button class="collapsible">Criminal Justice</button>
 			<div class="content">
-				<p>This is the information and pictures about Criminal Justice</p>
+				<h3>Classes offered in Criminal Justice</h3>
 				<ol>
 					<li>Principles of Criminal Justice</li>
 					<li>Law Enforcement I</li>
@@ -97,7 +125,7 @@
 			</div>
 			<button class="collapsible">Culinary Arts</button>
 			<div class="content">
-				<p>This is the information and pictures about Culinary Arts</p>
+				<h3>Classes offered in Culinary Arts</h3>
 				<ol>
 					<li>Principles of Hospitality</li>
 					<li>Introduction to Culinary Arts</li>
@@ -108,7 +136,7 @@
 			</div>
 			<button class="collapsible">Digital Media</button>
 			<div class="content">
-				<p>This is the information and pictures about Digital Media</p>
+				<h3>Classes offered in Digital Media</h3>
 				<ol>
 					<li>Principles of Digit Media</li>
 					<li>Audio/Video Production I</li>
@@ -123,7 +151,7 @@
 			</div>
 			<button class="collapsible">HOSA/Health Science</button>
 			<div class="content">
-				<p>This is the information and pictures about HOSA/Health Science</p>
+				<h3>Classes offered in HOSA/Health Science</p>
 				<ol>
 					<li>Principles of Health Science</li>
 					<li>Medical Terminology</li>
@@ -140,7 +168,7 @@
 			</div>
 			<button class="collapsible">Human Services</button>
 			<div class="content">
-				<p>This is the information and pictures about Human Services</p>
+				<h3>Classes offered in Human Services</p>
 				<ol>
 					<li>Principles of Human Services</li>
 					<li>Lifetime Nutrition & Wellness</li>
@@ -153,7 +181,7 @@
 			</div>
 			<button class="collapsible">Robotics/Engineering</button>
 			<div class="content">
-				<p>This is the information and pictures about Robotics/Engineering</p>
+				<h3>Classes offered in Robotics/Engineering</p>
 				<ol>
 					<li>Principles of Engineering and Robotics</li>
 					<li>Engineering Design I</li>
@@ -166,13 +194,26 @@
 			</div>
 			<!-- CS, CSI, CJ, HOSA, Auto tech, Culinary, Digital media, ag, animal science, Robotics, business/accounting-->
 			<!-- classes, summaries, images, teacher contact info, etc -->
-			<!-- link to TSA chapter and design brief main page-->
 		</div>
 		<div id="TSA">
 			<h3>Logo</h3>
 			<h3>Motto</h3>
+				<p>Learning to lead in a technical world</p>
 			<h3>Creed</h3>
+				<p>
+					I believe that Technology Education holds an important place in my life in the technical world. I believe there is a need for the development of good attitudes concerning work, tools, materials, experimentation, and processes of industry.
+					Guided by my teachers, artisans from industry, and my own initiative, I will strive to do my best in making my school, community, state, and nation better places in which to live.
+					I will accept the responsibilities that are mine. I will accept the theories that are supported by proper evidence. I will explore on my own for safer, more effective methods of working and living.
+					I will strive to develop a cooperative attitude and will exercise tact and respect for other individuals. Through the work of my hands and mind, I will express my ideas to the best of my ability.
+					I will make it my goal to do better each day the task before me, and to be steadfast in my belief in my God, and my fellow Americans.
+				</p>
 			<h3>Officers</h3>
+				<p>President: Jade Ruggerello</p>
+				<p>Vice-President: </p>
+				<p>Secretary: </p>
+				<p>Treasurer: </p>
+				<p>Sergeant-at-Arms: </p>
+				<p>Reporter: </p>
 			<h3>Photos</h3>
 			<h3>Chapter Activities</h3>
 			<!-- logo, motto, creed, officers, photos, chapter activites (school and community service projects)-->
@@ -216,10 +257,11 @@
 					document.getElementById("CTE").style.display = "block";
 					document.getElementById("TSA").style.display = "none";
 				} else {
-					document.getElementById("CTE").style.display = "block";
-					document.getElementById("TSA").style.display = "none";
+					document.getElementById("CTE").style.display = "none";
+					document.getElementById("TSA").style.display = "block";
 				}
 			}
 		</script>
+		<script src="../script.js"></script>
 	</body>
 </html>
