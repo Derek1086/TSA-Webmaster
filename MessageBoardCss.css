@@ -3,17 +3,17 @@
 	background-color: rgba(240, 128, 128, .85);
 	margin: 20px;
 	padding: 5px;
-	height: 200px;
 	display: block;
 }
 
-#btn {
+#btn, #view, #submitBtn {
 	/* border: none; */
 	border-radius: 5px;
 	background-color: rgba(240, 128, 128, .85);
 	font-size: 20px;
 	text-align: center;
 	margin-left: 50px;
+	margin-bottom: 5px;
 	padding: 10px;
 }
 
@@ -27,4 +27,17 @@ form {
 
 #add-message {
 	display: none;
+}
+
+.new {
+	padding: 0;
+	margin: 0;
+}
+
+.new h2 {
+	color: White;
+}
+
+tr {
+	border: 1px solid black;
 }

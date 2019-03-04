@@ -4,7 +4,8 @@ function addMessage() {
 }
 
 function submit() {
-	var comments = document.getElementById("comment").value;
+	var t = new Date();
+	var comment = document.getElementById("comment").value;
 	var subject = document.getElementById("subject").value;
 	var name = document.getElementById("name").value;
 	
@@ -12,19 +13,16 @@ function submit() {
 	var row = table.insertRow(1);
 	var cell = row.insertCell(0);
 	if(subject !== "null")
-		cell.innerHTML = "<h2>" + name + "</h2>" +
-			"<h3>" + subject "</h3>" +
-			"<p>" + comment + "</p>";
-	else
-		cell.innerHTML = "<h2>" + name + "</h2>" +
-			"<p>" + comment + "</p>";
+		cell.innerHTML = "<h2 class='new'>" + name + "</h2>" +
+			"<h3 class='new'>" + subject + "</h3>" +
+			"<p class='new'>" + comment + "</p>";	
+	else 
+		cell.innerHTML = "<h2 class='new'>" + name + "</h2>" +
+			"<p class='new'>" + comment + "</p>";	
+	localStorage.setItem(t, name + "\n" + subject + "\n" + comment);
 		
-	/*Enter value into the message board
-		name: in bold and on top
-		subject title??
-		comment: normal text underneath
-	*/
-	viewBoard();
+	document.getElementById("message-page").style.display = "block";
+	document.getElementById("add-message").style.display = "none";
 }
 
 function viewBoard() {
@@ -33,28 +31,28 @@ function viewBoard() {
 }
 
 window.onload = function() {
-	document.getElementById("btn").addEventListener("click", addMessage);
-	document.getElementById("view").addEventListener("click", viewBoard);
-	document.getElementById("btn").addEventListener("click", submit);
+	Object.keys(localStorage).forEach(function(key){
+		var table = document.getElementById("message-board");
+		var row = table.insertRow(1);
+		var cell = row.insertCell(0);
+		name = key;
+		sc = localStorage.getItem(key).split("\n");
+		comment = sc[1];
+		subject = sc[0];
+		if(subject !== "null")
+			cell.innerHTML = "<h2 class='new'>" + name + "</h2>" +
+				"<h3 class='new'>" + subject + "</h3>" +
+				"<p class='new'>" + comment + "</p>";
+		else 
+			cell.innerHTML = "<h2 class='new'>" + name + "</h2>" +
+			"<p class='new'>" + comment + "</p>";
+	});
 }
 
-function submit(e) {
-	var fName = document.getElementById("firstName").value;
-	var lName = document.getElementById("lastName").value;
-	var email = document.getElementById("email").value;
-	
-	var table = document.getElementById("allData");
-	var row = table.insertRow(1);
-	var cell1 = row.insertCell(0);
-	cell1.innerHTML = fName;
-	
-	var cell2 = row.insertCell(1);
-	cell2.innerHTML = lName;
-	
-	var cell3 = row.insertCell(2);
-	cell3.innerHTML = email;
-}
 
-function submit2() {
-	alert("You have ordered tickets to Hogwarts. It cost $100,000. Have fun!!");
-}
+
+
+
+
+
+

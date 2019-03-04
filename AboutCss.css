@@ -51,8 +51,8 @@ ol li{
 	width: initial;
 }
 
-#space {
-	height: 100px;
+button {
+	width: 49.8%;
+	padding: 2px;
+	display: inline-block;
 }
-
-
