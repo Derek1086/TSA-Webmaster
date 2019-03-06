@@ -6,9 +6,32 @@
 	<link rel="stylesheet" type="text/css" href="PopShopCss.css">
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
     <title>Pop Shop</title>
 	
 	<style>
+		@media (max-width: 810px) {
+				img {display: none;}
+				.nav li:not(:first-child) {display:none;}
+				.nav li.icon {
+					float: right;
+					display: block;
+				}
+			}
+			@media (max-width: 810px) {
+				.nav.responsive {position: relative;}
+				.nav.responsive li.icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+				.nav.responsive a {
+					float: none;
+					display: block;
+					text-align: left;
+				}
+			}
 		/* width */
 		::-webkit-scrollbar 
 		{
@@ -114,6 +137,10 @@
 			<li><a href="Bio.html">Bio</a></li>
 			<li><a href="MessageBoard.html">Message Board</a></li>
 			<li><a href="About.html">About</a></li>
+			<li class="icon"><a href="javascript:void(0);" onclick="navFunc()">
+						<i class="fa fa-bars"></i>
+					</a>
+				</li>
 		</ul>
 		<img src='logo.png' id="title" style="z-index: 6;" alt='Pop goes the weasel'>
 	</div>
@@ -576,7 +603,7 @@
 			<!--TODO: Copyright
 					: -->
 		</div>
-		
+		<script src="../script.js"></script>
 	<script src="PopShopJS.js"></script>
   </body>
 </html>
