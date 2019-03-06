@@ -6,6 +6,30 @@
 		<script src="../script.js"></script>
 		<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
 		<link href="../style.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			@media (max-width: 810px) {
+				img {display: none;}
+				.nav li:not(:first-child) {display:none;}
+				.nav li.icon {
+					float: right;
+					display: block;
+				}
+			}
+			@media (max-width: 810px) {
+				.nav.responsive {position: relative;}
+				.nav.responsive li.icon {
+					position: absolute;
+					right: 0;
+					top: 0;
+				}
+				.nav.responsive a {
+					float: none;
+					display: block;
+					text-align: left;
+				}
+			}
+		</style>
 	</head>
 	
 	<body>
@@ -52,5 +76,6 @@
 				<a href="https://www.twitter.com"><img src="../Images/twitter.png" alt="twitter" class="sm"></a>
 			</div>
 		</div>
+		<script src="../script.js"></script>
 	</body>
 </html>
