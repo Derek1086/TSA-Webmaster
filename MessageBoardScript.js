@@ -19,7 +19,7 @@ function submit() {
 	else 
 		cell.innerHTML = "<h2 class='new'>" + name + "</h2>" +
 			"<p class='new'>" + comment + "</p>";	
-	localStorage.setItem(t, name + "\n" + subject + "\n" + comment);
+	localStorage.setItem(name, subject + "\n" + comment);
 		
 	document.getElementById("message-page").style.display = "block";
 	document.getElementById("add-message").style.display = "none";
