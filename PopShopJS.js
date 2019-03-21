@@ -40,6 +40,7 @@ function loadDropdownShopOutput()
 		document.getElementById("clothes-shop").style.visibility = "hidden";
 		document.getElementById("album-shop").style.visibility = "hidden";
 		document.getElementById("merch-shop").style.visibility = "visible";
+		
 		document.getElementById("all-shop").style.visibility = "hidden";
 	}
 	else if(selectedDropdownItem == "All")
@@ -48,6 +49,399 @@ function loadDropdownShopOutput()
 		document.getElementById("album-shop").style.visibility = "hidden";
 		document.getElementById("merch-shop").style.visibility = "hidden";
 		document.getElementById("all-shop").style.visibility = "visible";
+	}
+}
+
+function move()
+{
+	var getSelectedItem = document.getElementById("shop-filter");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	var elem;
+	
+	if(selectedDropdownItem == "Clothing")
+	{
+		elem = document.getElementById("clothes-shop");
+		document.getElementById("shop-filter").style.display = "none";
+		document.getElementById("shopping-cart-container").style.display = "none";
+		document.getElementById("back-button").style.display = "block";
+	}
+	else if(selectedDropdownItem == "Albums")
+	{
+		elem = document.getElementById("album-shop");
+		document.getElementById("shop-filter").style.display = "none";
+		document.getElementById("shopping-cart-container").style.display = "none";
+		document.getElementById("back-button").style.display = "block";
+	}
+	else if(selectedDropdownItem == "Merch/Tickets")
+	{
+		elem = document.getElementById("merch-shop");
+		document.getElementById("shop-filter").style.display = "none";
+		document.getElementById("shopping-cart-container").style.display = "none";
+		document.getElementById("back-button").style.display = "block";
+	}
+	else if(selectedDropdownItem == "All")
+	{
+		elem = document.getElementById("all-shop");
+		document.getElementById("shop-filter").style.display = "none";
+		document.getElementById("shopping-cart-container").style.display = "none";
+		document.getElementById("back-button").style.display = "block";
+	}
+	
+	var elem2 = document.getElementById("check-out-container");
+	var pos = 0;
+	var id = setInterval(frame, 1);
+	function frame()
+	{
+		if(pos == -2000)
+		{
+			clearInterval(id);
+		}
+		else
+		{
+			pos -= 5;
+			elem.style.transform = "translateX(" + pos + "px)";
+			console.log(pos);
+		}
+	}
+	var pos2 = -7250;
+	var id2 = setInterval(frame2, 5);
+	function frame2()
+	{
+		if(pos2 == -5150)
+		{
+			clearInterval(id2);
+		}
+		else
+		{
+			pos2 += 10;
+			elem2.style.transform = "translateY(" + pos2 + "px)";
+			console.log(pos2);
+		}
+	}
+	console.log("moved");
+}
+
+function moveback()
+{
+	var getSelectedItem = document.getElementById("shop-filter");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	var elem;
+	
+	if(selectedDropdownItem == "Clothing")
+	{
+		elem = document.getElementById("clothes-shop");
+		document.getElementById("shop-filter").style.display = "block";
+		document.getElementById("shopping-cart-container").style.display = "block";
+		document.getElementById("back-button").style.display = "none";
+	}
+	else if(selectedDropdownItem == "Albums")
+	{
+		elem = document.getElementById("album-shop");
+		document.getElementById("shop-filter").style.display = "block";
+		document.getElementById("shopping-cart-container").style.display = "block";
+		document.getElementById("back-button").style.display = "none";
+	}
+	else if(selectedDropdownItem == "Merch/Tickets")
+	{
+		elem = document.getElementById("merch-shop");
+		document.getElementById("shop-filter").style.display = "block";
+		document.getElementById("shopping-cart-container").style.display = "block";
+		document.getElementById("back-button").style.display = "none";
+	}
+	else if(selectedDropdownItem == "All")
+	{
+		elem = document.getElementById("all-shop");
+		document.getElementById("shop-filter").style.display = "block";
+		document.getElementById("shopping-cart-container").style.display = "block";
+		document.getElementById("back-button").style.display = "none";
+	}
+	
+	var elem2 = document.getElementById("check-out-container");
+	var pos = -2000;
+	var id = setInterval(frame, 1);
+	function frame()
+	{
+		if(pos == 0)
+		{
+			clearInterval(id);
+		}
+		else
+		{
+			if(selectedDropdownItem == "Merch/Tickets")
+			{
+				pos += 5;
+				elem.style.transform = "translate(" + pos + "px, -1700px)";
+				console.log(pos);
+			}
+			else if(selectedDropdownItem == "Clothing")
+			{
+				pos += 5;
+				elem.style.transform = "translate(" + pos + "px, -18px)";
+				console.log(pos);
+			}
+			else if(selectedDropdownItem == "Albums")
+			{
+				pos += 5;
+				elem.style.transform = "translate(" + pos + "px, -855px)";
+				console.log(pos);
+			}
+			else if(selectedDropdownItem == "All")
+			{
+				pos += 5;
+				elem.style.transform = "translate(" + pos + "px, -2737px)";
+				console.log(pos);
+			}
+		}
+	}
+	var pos2 = -5150;
+	var id2 = setInterval(frame2, 5);
+	function frame2()
+	{
+		if(pos2 == -7250)
+		{
+			clearInterval(id2);
+		}
+		else
+		{
+			pos2 -= 10;
+			elem2.style.transform = "translateY(" + pos2 + "px)";
+			console.log(pos2);
+		}
+	}
+	console.log("moved");
+}
+
+function getClothingSize1()
+{
+	var getSelectedItem = document.getElementById("size-filter-1");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-1").innerHTML = selectedDropdownItem;
+}
+
+function getClothingSize1All()
+{
+	var getSelectedItem = document.getElementById("size-filter-1-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-1all").innerHTML = selectedDropdownItem;
+}
+
+function getClothingSize2()
+{
+	var getSelectedItem = document.getElementById("size-filter-2");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-2").innerHTML = selectedDropdownItem;
+}
+
+function getClothingSize2All()
+{
+	var getSelectedItem = document.getElementById("size-filter-2-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-2all").innerHTML = selectedDropdownItem;
+}
+
+function getClothingSize3()
+{
+	var getSelectedItem = document.getElementById("size-filter-3");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-3").innerHTML = selectedDropdownItem;
+}
+
+function getClothingSize3All()
+{
+	var getSelectedItem = document.getElementById("size-filter-3-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+
+	document.getElementById("size-cloth-3all").innerHTML = selectedDropdownItem;
+}
+
+function getClothingColor1()
+{
+	var getSelectedItem = document.getElementById("color-filter-1");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-1").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-image").src = "white.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-1").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-image").src = "black.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-1").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-image").src = "red.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-1").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-image").src = "blue.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-1").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-image").src = "orange.png";
+	}
+}
+
+function getClothingColor1All()
+{
+	var getSelectedItem = document.getElementById("color-filter-1-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-1all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-imageall").src = "white.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-1all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-imageall").src = "black.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-1all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-imageall").src = "red.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-1all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-imageall").src = "blue.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-1all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-1-imageall").src = "orange.png";
+	}
+}
+
+function getClothingColor2()
+{
+	var getSelectedItem = document.getElementById("color-filter-2");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-2").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-image").src = "beanie.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-2").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-image").src = "beanieblack.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-2").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-image").src = "beaniered.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-2").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-image").src = "beanieblue.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-2").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-image").src = "beaniepink.png";
+	}
+}
+
+function getClothingColor2All()
+{
+	var getSelectedItem = document.getElementById("color-filter-2-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-2all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-imageall").src = "beanie.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-2all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-imageall").src = "beanieblack.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-2all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-imageall").src = "beaniered.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-2all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-imageall").src = "beanieblue.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-2all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-2-imageall").src = "beaniepink.png";
+	}
+}
+
+function getClothingColor3()
+{
+	var getSelectedItem = document.getElementById("color-filter-3");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-3").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-image").src = "white3.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-3").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-image").src = "black2.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-3").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-image").src = "red3.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-3").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-image").src = "blue2.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-3").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-image").src = "orange3.png";
+	}
+}
+
+function getClothingColor3All()
+{
+	var getSelectedItem = document.getElementById("color-filter-3-all");
+	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
+	if(selectedDropdownItem == "White")
+	{
+		document.getElementById("color-cloth-3all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-imageall").src = "white3.png";
+	}
+	else if(selectedDropdownItem == "Black")
+	{
+		document.getElementById("color-cloth-3all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-imageall").src = "black2.png";
+	}
+	else if(selectedDropdownItem == "Red")
+	{
+		document.getElementById("color-cloth-3all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-imageall").src = "red3.png";
+	}
+	else if(selectedDropdownItem == "Blue")
+	{
+		document.getElementById("color-cloth-3all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-imageall").src = "blue2.png";
+	}
+	else if(selectedDropdownItem == "Orange")
+	{
+		document.getElementById("color-cloth-3all").innerHTML = selectedDropdownItem;
+		document.getElementById("cloth-3-imageall").src = "orange3.png";
 	}
 }
 
@@ -61,7 +455,7 @@ function movePurchaseSuccessful(clicked_id)
 	var id = setInterval(frame, 1);
 	function frame() 
 	{
-		if(ycoord == -4000) 
+		if(ycoord == -4600) 
 		{
 		clearInterval(id);
 		} 
@@ -153,7 +547,7 @@ function calculateCloth1Price()
 {
 	if(document.getElementById('cloth-1-quantity').value != 0)
 	{
-		if(document.getElementById('size-cloth-1').value === 'XS')
+		if(document.getElementById('size-cloth-1').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -162,7 +556,7 @@ function calculateCloth1Price()
 			document.getElementById('tax-cloth-1').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1').value === 'S')
+		else if(document.getElementById('size-cloth-1').innerHTML=== 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -171,7 +565,7 @@ function calculateCloth1Price()
 			document.getElementById('tax-cloth-1').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1').value === 'M')
+		else if(document.getElementById('size-cloth-1').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -180,7 +574,7 @@ function calculateCloth1Price()
 			document.getElementById('tax-cloth-1').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1').value === 'L')
+		else if(document.getElementById('size-cloth-1').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -189,7 +583,7 @@ function calculateCloth1Price()
 			document.getElementById('tax-cloth-1').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1').value === 'XL')
+		else if(document.getElementById('size-cloth-1').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -210,7 +604,7 @@ function calculateCloth1PriceAll()
 {
 	if(document.getElementById('cloth-1-quantityall').value != 0)
 	{
-		if(document.getElementById('size-cloth-1all').value === 'XS')
+		if(document.getElementById('size-cloth-1all').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-1-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -219,7 +613,7 @@ function calculateCloth1PriceAll()
 			document.getElementById('tax-cloth-1all').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1all').value === 'S')
+		else if(document.getElementById('size-cloth-1all').innerHTML === 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-1-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -228,7 +622,7 @@ function calculateCloth1PriceAll()
 			document.getElementById('tax-cloth-1all').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1all').value === 'M')
+		else if(document.getElementById('size-cloth-1all').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-1-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -237,7 +631,7 @@ function calculateCloth1PriceAll()
 			document.getElementById('tax-cloth-1all').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1all').value === 'L')
+		else if(document.getElementById('size-cloth-1all').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-1-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -246,7 +640,7 @@ function calculateCloth1PriceAll()
 			document.getElementById('tax-cloth-1all').innerHTML = newTaxValue;
 			document.getElementById('cloth-1-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-1all').value === 'XL')
+		else if(document.getElementById('size-cloth-1all').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-1-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -267,7 +661,7 @@ function calculateCloth2Price()
 {
 	if(document.getElementById('cloth-2-quantity').value != 0)
 	{
-		if(document.getElementById('size-cloth-2').value === 'XS')
+		if(document.getElementById('size-cloth-2').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-2-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -276,7 +670,7 @@ function calculateCloth2Price()
 			document.getElementById('tax-cloth-2').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2').value === 'S')
+		else if(document.getElementById('size-cloth-2').innerHTML === 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-2-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -285,7 +679,7 @@ function calculateCloth2Price()
 			document.getElementById('tax-cloth-2').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2').value === 'M')
+		else if(document.getElementById('size-cloth-2').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-2-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -294,7 +688,7 @@ function calculateCloth2Price()
 			document.getElementById('tax-cloth-2').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2').value === 'L')
+		else if(document.getElementById('size-cloth-2').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-1-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -303,7 +697,7 @@ function calculateCloth2Price()
 			document.getElementById('tax-cloth-2').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2').value === 'XL')
+		else if(document.getElementById('size-cloth-2').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-2-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -324,7 +718,7 @@ function calculateCloth2PriceAll()
 {
 	if(document.getElementById('cloth-2-quantityall').value != 0)
 	{
-		if(document.getElementById('size-cloth-2all').value === 'XS')
+		if(document.getElementById('size-cloth-2all').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-2-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -333,7 +727,7 @@ function calculateCloth2PriceAll()
 			document.getElementById('tax-cloth-2all').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2all').value === 'S')
+		else if(document.getElementById('size-cloth-2all').innerHTML === 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-2-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -342,7 +736,7 @@ function calculateCloth2PriceAll()
 			document.getElementById('tax-cloth-2all').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2all').value === 'M')
+		else if(document.getElementById('size-cloth-2all').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-2-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -351,7 +745,7 @@ function calculateCloth2PriceAll()
 			document.getElementById('tax-cloth-2all').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2all').value === 'L')
+		else if(document.getElementById('size-cloth-2all').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-2-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -360,7 +754,7 @@ function calculateCloth2PriceAll()
 			document.getElementById('tax-cloth-2all').innerHTML = newTaxValue;
 			document.getElementById('cloth-2-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-2all').value === 'XL')
+		else if(document.getElementById('size-cloth-2all').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-2-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -381,7 +775,7 @@ function calculateCloth3Price()
 {
 	if(document.getElementById('cloth-3-quantity').value != 0)
 	{
-		if(document.getElementById('size-cloth-3').value === 'XS')
+		if(document.getElementById('size-cloth-3').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-3-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -390,7 +784,7 @@ function calculateCloth3Price()
 			document.getElementById('tax-cloth-3').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3').value === 'S')
+		else if(document.getElementById('size-cloth-3').innerHTML === 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-3-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -399,7 +793,7 @@ function calculateCloth3Price()
 			document.getElementById('tax-cloth-3').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3').value === 'M')
+		else if(document.getElementById('size-cloth-3').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-3-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -408,7 +802,7 @@ function calculateCloth3Price()
 			document.getElementById('tax-cloth-3').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3').value === 'L')
+		else if(document.getElementById('size-cloth-3').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-3-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -417,7 +811,7 @@ function calculateCloth3Price()
 			document.getElementById('tax-cloth-3').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-price').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3').value === 'XL')
+		else if(document.getElementById('size-cloth-3').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-3-quantity').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -438,7 +832,7 @@ function calculateCloth3PriceAll()
 {
 	if(document.getElementById('cloth-3-quantityall').value != 0)
 	{
-		if(document.getElementById('size-cloth-3all').value === 'XS')
+		if(document.getElementById('size-cloth-3all').innerHTML === 'XS')
 		{
 			var taxTotalValue = 10 * (document.getElementById('cloth-3-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -447,7 +841,7 @@ function calculateCloth3PriceAll()
 			document.getElementById('tax-cloth-3all').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3all').value === 'S')
+		else if(document.getElementById('size-cloth-3all').innerHTML === 'S')
 		{
 			var taxTotalValue = 15 * (document.getElementById('cloth-3-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -456,7 +850,7 @@ function calculateCloth3PriceAll()
 			document.getElementById('tax-cloth-3all').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3all').value === 'M')
+		else if(document.getElementById('size-cloth-3all').innerHTML === 'M')
 		{
 			var taxTotalValue = 20 * (document.getElementById('cloth-3-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -465,7 +859,7 @@ function calculateCloth3PriceAll()
 			document.getElementById('tax-cloth-3all').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3all').value === 'L')
+		else if(document.getElementById('size-cloth-3all').innerHTML === 'L')
 		{
 			var taxTotalValue = 25 * (document.getElementById('cloth-3-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -474,7 +868,7 @@ function calculateCloth3PriceAll()
 			document.getElementById('tax-cloth-3all').innerHTML = newTaxValue;
 			document.getElementById('cloth-3-priceall').innerHTML = fixedNewTaxTotalValue;
 		}
-		else if(document.getElementById('size-cloth-3all').value === 'XL')
+		else if(document.getElementById('size-cloth-3all').innerHTML === 'XL')
 		{
 			var taxTotalValue = 30 * (document.getElementById('cloth-3-quantityall').value) * tax;
 			var newTaxValue = taxTotalValue.toFixed(2);
@@ -718,8 +1112,8 @@ function activatePurchaseItems()
 		elements[i].style.display = "none";
 	}
 	
-	document.getElementById("return-total-tax-container").innerHTML = "";
-	document.getElementById("return-total-price-container").innerHTML = "";
+	document.getElementById("return-total-tax-container").innerHTML = "0.00";
+	document.getElementById("return-total-price-container").innerHTML = "0.00";
 	totalCartPrice = 0;
 	numberOfItems = 0;
 	document.getElementById("amount-of-items").innerHTML = numberOfItems;
