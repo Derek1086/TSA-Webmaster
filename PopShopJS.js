@@ -58,6 +58,8 @@ function move()
 	var selectedDropdownItem = getSelectedItem.options[getSelectedItem.selectedIndex].text;
 	var elem;
 	
+	document.getElementById("check-out-container").style.display = "block";
+	
 	if(selectedDropdownItem == "Clothing")
 	{
 		elem = document.getElementById("clothes-shop");
@@ -87,6 +89,8 @@ function move()
 		document.getElementById("back-button").style.display = "block";
 	}
 	
+	document.getElementById("purchase-successful").style.display="none";
+	
 	var elem2 = document.getElementById("check-out-container");
 	var pos = 0;
 	var id = setInterval(frame, 1);
@@ -107,7 +111,7 @@ function move()
 	var id2 = setInterval(frame2, 5);
 	function frame2()
 	{
-		if(pos2 == -5150)
+		if(pos2 == -4850)
 		{
 			clearInterval(id2);
 		}
@@ -1105,7 +1109,10 @@ function moveInformationToCart(itemName, itemQuantity, itemPrice)
 
 function activatePurchaseItems()
 {
-	document.getElementById('cart-purchase-successful').style.display = 'block';
+	document.getElementById('cart-purchase-successful').style.display = 'none';
+	document.getElementById("buy-cart-items-button").innerHTML = "Purchase Successful";
+	document.getElementById("return-address").style.display = "block";
+	document.getElementById("address-line").innerHTML = document.getElementById("address").value;
 	var elements = document.getElementsByClassName("shop-item-element");
 	for(var i = 0; i < elements.length; i++)
 	{
@@ -1117,6 +1124,10 @@ function activatePurchaseItems()
 	totalCartPrice = 0;
 	numberOfItems = 0;
 	document.getElementById("amount-of-items").innerHTML = numberOfItems;
+	document.getElementById("buy-cart-items-button").disabled = true;
+	setTimeout(moveback, 3000);
+	document.getElementById("buy-cart-items-button").disabled = false;
+	document.getElementById("buy-cart-items-button").innerHTML = "Purchase";
 }
 
 function removeCartItemDisplay(clicked_id)
