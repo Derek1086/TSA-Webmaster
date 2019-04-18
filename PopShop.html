@@ -2,35 +2,13 @@
 <html>
   <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="PopShopCss.css">
 	<link href="style.css" rel="stylesheet" type="text/css">
 	<link href="https://fonts.googleapis.com/css?family=Acme" rel="stylesheet">
-	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
     <title>Pop Shop</title>
 	
 	<style>
-		@media (max-width: 810px) {
-				img {display: none;}
-				.nav li:not(:first-child) {display:none;}
-				.nav li.icon {
-					float: right;
-					display: block;
-				}
-			}
-			@media (max-width: 810px) {
-				.nav.responsive {position: relative;}
-				.nav.responsive li.icon {
-					position: absolute;
-					right: 0;
-					top: 0;
-				}
-				.nav.responsive a {
-					float: none;
-					display: block;
-					text-align: left;
-				}
-			}
 		/* width */
 		::-webkit-scrollbar 
 		{
@@ -156,7 +134,7 @@
 
 	<div onclick="" id="shopping-cart-container">
 		<img style="transform: translateY(25px);" onclick="move()" id="shopping-cart" src="http://cdn.onlinewebfonts.com/svg/download_290616.png"/>
-		<div id="number-of-items"><span id="amount-of-items">0<span></div>
+		<div id="number-of-items" ><span id="amount-of-items">0<span></div>
 		<div style="transform: translate(-15px,-25px)" id="to-cart-shower">Go to Checkout -></div>
 	</div>
 	</a>
@@ -595,7 +573,7 @@
 	</div>
 	
 	<!--Checkout section-->
-	<div id="check-out-container" style="z-index: -1; transform: translateY(-6600px);">
+	<div id="check-out-container" style="z-index: -1; transform: translateY(-6600px); display: none">
 		<p id="check-out-header" style="z-index: -1;">Shopping Cart</p> 
 		<div id="check-out-taskbar">
 			<div id="cart-item-name">Item Description</div>
@@ -617,7 +595,7 @@
 			</div>
 		</div>
 		
-		<div id="buy-cart-items-button" onclick="activatePurchaseItems()">Purchase</div>
+		<div id="buy-cart-items-button" onclick="activatePurchaseItems()" style="transform: translateY(600px)">Purchase</div>
 		
 		<div id="cart-purchase-successful">
 			Your purchase was successful
@@ -627,13 +605,68 @@
 			<div id="returning-cart-total-price-container">Total Price: <span id="returning-cart-total-price"></span>
 			</div>
 		</div>
+		<center>
+		<div id="form-fill-out">
+			<div id="1">
+				<p class="input-header">First Name</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="2">
+				<p class="input-header">Last Name</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="3">
+				<p class="input-header">Email</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="4">
+				<p class="input-header">Phone Number</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="5">
+				<p class="input-header">Street Address</p>
+				<input id="address" type="text" class="input-form-text"></input>
+			</div>
+			<div id="6">
+				<p class="input-header">City</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="7">
+				<p class="input-header">Zip Code</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="8">
+				<p class="input-header">State</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="9">
+				<p class="input-header">Country</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="10">
+				<p class="input-header">Card Number</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="11">
+				<p class="input-header">Expiration Date</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+			<div id="12">
+				<p class="input-header">Security Code</p>
+				<input type="text" class="input-form-text"></input>
+			</div>
+		</div>
+		</center>
+		<div id="return-address" style="display: none">
+			Order sent to: <span id="address-line"></span>
+		</div>
 	</div>
 	
-	<div id="back-button" onclick="moveback()" style="transform: translateY(-6215px); margin-left: 7px; display: none">
+	<div id="back-button" onclick="moveback()" style="transform: translateY(-5945px); margin-left: 7px; display: none">
 		Back to shop
 	</div>
 
-	<div id="footer">
+	<div id="footer" style="opacity: 1">
 			<p id="copyright">
 				&copy Derek, Tristian and Megan
 				
@@ -649,6 +682,7 @@
 			<!--TODO: Copyright
 					: -->
 		</div>
+		
 	<script src="PopShopJS.js"></script>
   </body>
 </html>
