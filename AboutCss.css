@@ -25,6 +25,13 @@
 	transition: max-height 0.2s ease-out;
 }
 
+#leapreport
+{
+	width: 100px;
+	height: 50px;
+	margin: 0 auto;
+}
+
 .collapsible:after {
 	content: '\02795'; 
 	font-size: 13px;
